@@ -29,7 +29,10 @@ public class Dictionary {
 		String word = "ealdngi";
 		
 		//d.searchForPermutations();
-		
+
+		System.out.println("Entries: " + d.hashTable.entries + " | " + "Collisions: " + d.hashTable.collisions);
+
+		System.out.println();
 		LinkedList<String> all = d.lookup(word);
 		System.out.println("Permutations of (" + word + ") could be in here:");
 		System.out.println(all);
