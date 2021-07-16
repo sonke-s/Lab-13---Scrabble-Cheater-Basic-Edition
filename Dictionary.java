@@ -58,7 +58,7 @@ public class Dictionary {
 		text = new Scanner(input);
 		
 		while(text.hasNext()) {
-			hashTable.add(text.next(), hashTable.array, false);
+			hashTable.add(text.next(), false);
 		}
 	}
 	
