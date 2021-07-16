@@ -14,6 +14,9 @@ public class HashTable {
 	int wordSum;
 	LinkedList<String> list = new LinkedList<String>();
 	
+	int collisions = 0;
+	int entries = 0;
+	
 	//This just creates the Array as the HashTable for a 
 	//given size and fills it with empty LinkedLists
 	HashTable(int size) {
@@ -44,7 +47,13 @@ public class HashTable {
 			}
 		}
 		System.out.println();
+		
+		if(!array[index].isEmpty()) {
+			collisions++;
+		}
 		array[index].add(word);
+		entries++;
+		
 	}
 	
 	/*
