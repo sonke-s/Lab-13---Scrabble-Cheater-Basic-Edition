@@ -11,9 +11,6 @@ public class HashTable {
 
 	LinkedList<String>[] array;
 	int arraySize;
-	int wordSum;
-	LinkedList<String> list = new LinkedList<String>();
-	
 	int collisions = 0;
 	int entries = 0;
 	
@@ -36,7 +33,7 @@ public class HashTable {
 	 * placement of the words at their respective index, and can optionally be
 	 * turned off or on. In the end the whole array is printed. 
 	 */
-	public void add(String word, LinkedList<String>[] array, boolean text) {
+	public void add(String word, boolean text) {
 		
 		int index = calculateIndex(word);
 			
@@ -45,8 +42,8 @@ public class HashTable {
 			if(!array[index].isEmpty()) {
 					System.out.println("Collision! Added to the LinkedList at index:  " + index);
 			}
+			System.out.println();
 		}
-		System.out.println();
 		
 		if(!array[index].isEmpty()) {
 			collisions++;
@@ -67,11 +64,10 @@ public class HashTable {
 		word = word.toLowerCase();
 		
 		int index = 0;
-		int code = 0;
 		
 		char[] c = word.toCharArray();
 		for(int i = 0; i < c.length; i++) {
-			code = c[i];
+			int code = c[i];
 			index = index + code * 33751;
 		}
 		index = index % array.length;
